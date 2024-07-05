@@ -1,4 +1,3 @@
-from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
 from django.contrib import auth
 import BaseUserManager
@@ -24,3 +23,4 @@ class UserManager(BaseUserManager):
             raise ValueError('SuperUser must have the is_staff True')
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('SuperUser must have the is_superuser True')
+        return self._create_user(email,passWord,**extra_fields)
