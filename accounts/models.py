@@ -33,7 +33,7 @@ class UserBankAccount(models.Model):
     gender = models.CharField(max_length=1,choices=GENDER_CHOICE)
     birth_date = models.DateField(null=True,blank=True)
     balance = models.DecimalField(default=0,max_digits=10,decimal_places=2)
-    initial_deposit_date = models.DateField(auto_now_add=True)
+    initial_deposit_date = models.DateTimeField(auto_now_add=True)
     def _str_(self):
         return self.account_no
 
